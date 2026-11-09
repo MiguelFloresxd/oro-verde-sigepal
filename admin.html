@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Panel · Oro Verde</title>
+<link rel="icon" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="top"><img src="assets/logo.png" alt=""><h1>Panel de Oro Verde</h1><span id="user" class="muted" style="color:#cfdcc6"></span><button class="sec hide" id="salir">Salir</button></div>
+
+<div class="login" id="login">
+  <h2>Ingresar</h2><p>Solo para la administración de Oro Verde.</p>
+  <label for="em">Correo</label><input id="em" type="email" autocomplete="username">
+  <label for="pw">Contraseña</label><input id="pw" type="password" autocomplete="current-password">
+  <div id="lerr" style="color:#b42318;font-size:.88rem;margin:10px 0;min-height:1.2em"></div>
+  <button id="entrar" style="width:100%">Entrar</button>
+</div>
+
+<div class="wrap hide" id="app">
+  <div class="msg" id="msg"></div>
+  <div class="alert" id="alertas"></div>
+  <div class="stats" id="stats"></div>
+  <div class="tabs"><button data-t="pedidos" class="on">Pedidos</button><button data-t="clientes">Clientes</button><button data-t="productos">Productos y stock</button></div>
+
+  <div id="v-pedidos">
+    <div class="bar"><input id="buscaP" placeholder="Buscar por N°, nombre o celular"><select id="filtro"><option value="">Todos los estados</option><option value="pendiente">Pendientes</option><option value="confirmado">Confirmados</option><option value="en_camino">En camino</option><option value="entregado">Entregados</option><option value="cancelado">Cancelados</option></select><button class="sec" id="recargar">Actualizar</button></div>
+    <div id="lista"></div>
+  </div>
+  <div id="v-clientes" class="hide">
+    <div class="bar"><input id="buscaC" placeholder="Buscar por nombre, correo o celular"><select id="filtroC"><option value="">Todos</option><option value="cuenta">Con cuenta</option><option value="invitado">Invitados (sin cuenta)</option></select></div>
+    <div id="listaC"></div>
+  </div>
+  <div id="v-productos" class="hide"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

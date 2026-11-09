@@ -1,0 +1,17 @@
+# Evita que el proyecto gratuito de Supabase se pause por inactividad (hace una consulta simple cada 3 días).
+# Requiere los secretos SUPABASE_URL y SUPABASE_ANON_KEY (Settings > Secrets and variables > Actions).
+name: Mantener Supabase activo
+on:
+  schedule:
+    - cron: '17 12 */3 * *'
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Consulta ligera a la base de datos
+        env:
+          URL: ${{ secrets.SUPABASE_URL }}
+          KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          curl -fsS "$URL/rest/v1/productos?select=id&limit=1" -H "apikey: $KEY" -H "Authorization: Bearer $KEY"

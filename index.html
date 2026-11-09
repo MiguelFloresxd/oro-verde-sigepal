@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oro Verde · Aceite de palta extra virgen de Moquegua</title>
+<meta name="description" content="Aceite de palta extra virgen Oro Verde, producto de Moquegua. Elige tu presentación y pide por WhatsApp.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#"><img src="assets/logo.png" alt="Logo Oro Verde">ORO VERDE</a>
+  <div class="navr"><a class="lnk hide" id="lnkCuenta" href="#cuenta">Mis pedidos</a><a class="lnk hide" id="lnkPanel" href="admin.html" style="background:var(--gold);color:var(--g0);border-radius:99px;padding:9px 16px;display:inline-block">Panel</a><a class="cta" href="#catalogo">Ver catálogo</a><button class="cta" id="btnCuenta" type="button">Ingresar</button></div>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Producto de Moquegua</span>
+    <h1>Aceite de palta <em>extra virgen</em> para tu mesa</h1>
+    <p class="lead">Elige tu presentación, arma tu pedido en un minuto y envíalo directo por WhatsApp a la Sra. Estefany.</p>
+    <div class="btns">
+      <a class="btn gold" href="#catalogo">Elegir presentación</a>
+      <a class="btn ghost" href="#como">¿Cómo pedir?</a>
+      <button class="btn ghost" id="btnHero" type="button">Ingresar / Crear cuenta</button>
+    </div>
+    <div class="badges"><span>Extra virgen</span><span>100% natural</span><span>Premium</span><span>Super food</span></div>
+  </div>
+  <div class="shot">
+    <div class="arch"><img src="assets/botella.jpg" alt="Botellas de aceite de palta Oro Verde"></div>
+    <div class="tag">Hecho en Moquegua<small>Oro Verde · Aceite de palta</small></div>
+  </div>
+</div></div>
+
+<section id="catalogo"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Catálogo</span><h2>Elige tu presentación</h2><p>Precios por unidad. Si necesitas factura, se suma S/ <span id="recargoTxt">5</span> por unidad (IGV).</p></div>
+  <div class="grid" id="productos"></div>
+</div></section>
+
+<section id="como" style="padding-top:0"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Cómo pedir</span><h2>Tres pasos, sin instalar nada</h2></div>
+  <div class="steps">
+    <div class="step"><h3>Elige</h3><p>Escoge la presentación y la cantidad que necesitas.</p></div>
+    <div class="step"><h3>Completa tus datos</h3><p>Tu nombre, tu celular y, si quieres, tu dirección.</p></div>
+    <div class="step"><h3>Envía por WhatsApp</h3><p>Se abre WhatsApp con tu pedido listo. Solo tocas enviar.</p></div>
+  </div>
+</div></section>
+
+<section id="pedido"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Tu pedido</span><h2>Revisa y envía</h2></div>
+  <div class="order">
+    <div class="panel">
+      <h3>Resumen</h3>
+      <div id="resumen"></div>
+      <label class="chk"><input type="checkbox" id="factura"> <span>Necesito factura <br><small style="color:var(--mut)">Se suma S/ <span class="rec">5</span> por unidad por el IGV.</small></span></label>
+      <div class="tot"><span>Total</span><strong id="total">S/ 0.00</strong></div>
+    </div>
+    <form class="panel" id="form" novalidate>
+      <h3>Tus datos</h3>
+      <label for="nombre">Nombre</label><input type="text" id="nombre" autocomplete="name" placeholder="Ej. María Pérez">
+      <label for="tel">Celular</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="Ej. 999 999 999">
+      <label for="dir">Dirección o referencia <span style="font-weight:400;color:var(--mut)">(opcional)</span></label><input type="text" id="dir" autocomplete="street-address" placeholder="Calle, distrito, referencia">
+      <label for="notas">Notas <span style="font-weight:400;color:var(--mut)">(opcional)</span></label><textarea id="notas" placeholder="Ej. entrega por la tarde"></textarea>
+      <div class="err" id="err" role="alert"></div>
+      <button class="btn wa" id="enviar" type="submit">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+        Pedir por WhatsApp
+      </button>
+      <div class="ok" id="ok"></div>
+      <p class="note">Al enviar se abre tu WhatsApp con el pedido escrito. La Sra. Estefany te confirma la entrega.</p>
+    </form>
+  </div>
+</div></section>
+<section id="cuenta" class="hide"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Mi cuenta</span><h2>Mis pedidos</h2><p id="cuentaSub">Tu historial de compras en Oro Verde.</p></div>
+  <div class="two">
+    <div class="hist" id="hist"></div>
+    <form class="panel" id="datos" novalidate>
+      <h3>Mis datos</h3>
+      <div class="hello" id="mail"></div>
+      <label for="dNombre">Nombre</label><input type="text" id="dNombre">
+      <label for="dTel">Celular</label><input type="tel" id="dTel" inputmode="tel">
+      <label for="dDir">Dirección</label><input type="text" id="dDir">
+      <div class="err" id="dMsg" role="status"></div>
+      <button class="btn sm" type="submit" style="margin-top:6px">Guardar mis datos</button>
+      <button class="btn sm" type="button" id="btnSalir" style="margin-top:6px;margin-left:6px;background:#fff;color:var(--g1);border:1.5px solid var(--g2)">Cerrar sesión</button>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<dialog id="dlg"><div class="dg">
+  <button class="x" id="dlgX" type="button" aria-label="Cerrar">×</button>
+  <h3 id="dlgT">Bienvenido</h3><p class="sub">Con tu cuenta guardamos tus pedidos y puedes ver tu historial de compras.</p>
+  <div class="tabs2"><button type="button" id="tabIn" class="on">Ingresar</button><button type="button" id="tabUp">Crear cuenta</button></div>
+  <form id="fAuth" novalidate>
+    <div id="upFields" class="hide">
+      <label for="aNombre">Nombre</label><input type="text" id="aNombre" autocomplete="name">
+      <label for="aTel">Celular</label><input type="tel" id="aTel" autocomplete="tel" inputmode="tel">
+    </div>
+    <label for="aMail">Correo</label><input type="email" id="aMail" autocomplete="email">
+    <label for="aPass">Contraseña <span style="font-weight:400;color:var(--mut)" id="passHint"></span></label><input type="password" id="aPass" autocomplete="current-password">
+    <div class="err" id="aErr" role="alert"></div>
+    <button class="btn wa" id="aGo" type="submit" style="background:var(--g2);color:#fff;box-shadow:none">Ingresar</button>
+  </form>
+</div></dialog>
+
+<footer><div class="wrap">
+  <a class="brand" href="#"><img src="assets/logo.png" alt="">ORO VERDE</a>
+  <div>Aceite de palta extra virgen · Producto de Moquegua<br><small>© <span id="yy"></span> Oro Verde · Sra. Estefany Bermudez Trujillo</small></div>
+</div></footer>
+
+<div class="bar" id="bar"><span><small style="opacity:.7;display:block;font-size:.72rem;line-height:1">Tu pedido</small><b id="barTot">S/ 0.00</b></span><a href="#pedido">Ver pedido</a></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script src="js/logic.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
