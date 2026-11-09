@@ -1,0 +1,17 @@
+{
+  "name": "oro-verde-sigepal",
+  "version": "1.0.0",
+  "description": "SIGEPAL: sistema web de pedidos y catálogo virtual de aceite de palta para Oro Verde (Moquegua).",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "npx --yes serve .",
+    "test": "node --test tests/unit/*.test.js tests/e2e/*.test.js",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:e2e": "node --test tests/e2e/*.test.js",
+    "capturas": "node tests/e2e/capturas.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}

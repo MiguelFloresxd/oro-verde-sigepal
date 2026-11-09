@@ -1,0 +1,8 @@
+node_modules/
+.env
+.env.*
+*.log
+.DS_Store
+# Claves secretas: jamás se suben
+*service_role*
+*.secret
