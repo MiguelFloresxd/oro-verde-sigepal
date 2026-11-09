@@ -6,7 +6,7 @@ El cliente elige su presentación, arma el pedido y lo envía por WhatsApp; la d
 > Proyecto del curso **Ingeniería de Software** (Universidad Nacional de Moquegua, Ing. de Sistemas e Informática).
 > Autor: Miguel Angel Flores Bermudez · Docente: Dr. Alexander Morales Gonzales.
 
-**Web en producción:** `https://TU-SITIO.netlify.app` &nbsp;·&nbsp; **Panel:** `https://TU-SITIO.netlify.app/admin.html`
+**Web en producción:** `https://oroverdee.netlify.app` &nbsp;·&nbsp; **Panel:** `https://oroverdee.netlify.app/admin.html`
 
 ![Inicio](docs/capturas/01-inicio.png)
 
@@ -66,7 +66,7 @@ Requisitos: cuenta gratuita en Supabase y Node.js 20+ (solo para correr las prue
 ### 1. Clonar
 
 ```bash
-git clone https://github.com/TU-USUARIO/oro-verde-sigepal.git
+git clone https://github.com/MiguelFloresxd/oro-verde-sigepal.git
 cd oro-verde-sigepal
 ```
 
